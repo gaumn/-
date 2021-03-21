@@ -3,15 +3,20 @@
  * @Author: gaumn
  * @Date: 2021-03-12 20:52:07
  * @LastEditors: gaumn
- * @LastEditTime: 2021-03-14 21:16:52
+ * @LastEditTime: 2021-03-20 21:45:38
  */
 #include <iostream>
+#include "Random.hpp"
 #include <vector>
 #include "Sort.hpp"
 using namespace std;
+#define N 50000         //定义测试数组数目
+#define MinNumber 0     //最小生成随机数
+#define MaxNumber 10000 //最大生成随机数
 int main(int argc, char const *argv[])
 {
-    vector<int> arr{0, 1, 20, 32, 41, 38, 30, 40, 1, 3, 5, 2, 9, 105, 49};
+    vector<int> arr = Random::get_array(N, MinNumber, MaxNumber);
+    Random::printarr(arr);
     /**
     * 交换排序类型
     *   冒泡排序和快速排序
@@ -35,11 +40,16 @@ int main(int argc, char const *argv[])
     //简单选择排序
     // SelectSort(arr);
     //堆排序
-    HeapSort(arr);
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << "    ";
-    }
-
+    // HeapSort(arr);
+    /**
+     * 4.非比较类排序
+     **/
+    //计数排序
+    // CountingSort(arr);
+    //基数排序
+    // RadixSort(arr);
+    //桶排序(链表)
+    BucketSort(arr); //存在问题，当排序数目500左右编译器(vscode)要报错
+    Random::printarr(arr);
     return 0;
 }

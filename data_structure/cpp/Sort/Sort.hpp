@@ -1,14 +1,21 @@
 /*
- * @Descripttion: SortTest.cpp
+ * @Descripttion: Sort.hpp
  * @Author: gaumn
  * @Date: 2021-03-12 20:51:56
  * @LastEditors: gaumn
- * @LastEditTime: 2021-03-14 21:22:24
+ * @LastEditTime: 2021-03-20 21:40:11
  */
 #pragma onece
 #include <iostream>
 #include <vector>
 using namespace std;
+const int BUCKET_NUM = 10;
+struct ListNode
+{
+    explicit ListNode(int i = 0) : Data(i), Next(NULL) {}
+    ListNode *Next;
+    int Data;
+};
 void test();
 /**
  * 交换排序类型
@@ -28,4 +35,12 @@ void ShellSort(vector<int> &arr);  //希尔排序
 */
 void SelectSort(vector<int> &arr); //简单选择排序
 void HeapSort(vector<int> &arr);   //堆排序
+/**
+ * 非比较排序
+ *  计数排序，基数排序，桶排序
+ * **/
+void CountingSort(vector<int> &arr); //计数排序
+void RadixSort(vector<int> &arr);    //基数排序
+void BucketSort(vector<int> &arr);
+// void BucketSort(vector<int> &arr);   //桶排序
 #include "Sort.cpp"
