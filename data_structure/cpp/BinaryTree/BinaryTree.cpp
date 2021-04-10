@@ -6,6 +6,6 @@
  * @LastEditors: gaumn
  */
 template <class T>
-BinaryTree<T>::BinaryTree(int len)
+BinaryTree<T>::BinaryTree(vector<int> &arr)
 {
 }
