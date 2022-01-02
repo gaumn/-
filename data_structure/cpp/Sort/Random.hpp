@@ -2,7 +2,7 @@
  * @Description: Random.hpp
  * @Author: gaumn 
  * @Date: 2021-03-20 17:54:27
- * @LastEditTime: 2021-03-20 21:45:53
+ * @LastEditTime: 2021-11-18 21:59:29
  * @LastEditors: gaumn
  */
 #pragma onece
@@ -30,10 +30,13 @@ namespace Random
     void printarr(vector<int> &arr)
     {
         int n = arr.size();
+        int sum = 0;
         for (int i = 0; i < n; i++)
         {
             cout << arr[i] << " ";
+            sum += arr[i];
         }
+        cout << sum << " ";
         cout << endl;
     }
 } // namespace Random

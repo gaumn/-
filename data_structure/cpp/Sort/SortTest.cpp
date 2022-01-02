@@ -3,16 +3,16 @@
  * @Author: gaumn
  * @Date: 2021-03-12 20:52:07
  * @LastEditors: gaumn
- * @LastEditTime: 2021-03-20 21:45:38
+ * @LastEditTime: 2021-11-18 21:57:15
  */
 #include <iostream>
 #include "Random.hpp"
 #include <vector>
 #include "Sort.hpp"
 using namespace std;
-#define N 50000         //定义测试数组数目
-#define MinNumber 0     //最小生成随机数
-#define MaxNumber 10000 //最大生成随机数
+#define N 10         //定义测试数组数目
+#define MinNumber 8  //最小生成随机数
+#define MaxNumber 10 //最大生成随机数
 int main(int argc, char const *argv[])
 {
     vector<int> arr = Random::get_array(N, MinNumber, MaxNumber);
@@ -49,7 +49,8 @@ int main(int argc, char const *argv[])
     //基数排序
     // RadixSort(arr);
     //桶排序(链表)
-    BucketSort(arr); //存在问题，当排序数目500左右编译器(vscode)要报错
-    Random::printarr(arr);
+    // BucketSort(arr); //存在问题，当排序数目500左右编译器(vscode)要报错
+
+    // Random::printarr(arr);
     return 0;
 }
